@@ -6,6 +6,18 @@ MIT License
 ### API Postman Collection
 * https://documenter.getpostman.com/view/2025350/RWaEzAiG
 
+
+heroku apps:create stage-react-frontend
+heroku apps:rename dev-react-frontend
+heroku git:remote -a dev-react-frontend
+git remote rename heroku heroku-staging
+
+heroku plugins:install heroku-builds
+heroku builds -a YOUR_APP_NAME
+heroku builds:cancel BUILD_ID -a YOUR_APP_NAME
+
+heroku git:clone -a stark-river-10341
+
 ### Heroku
 * sudo snap install --classic heroku
 
@@ -19,9 +31,6 @@ MIT License
 
 #### CD
 * https://devcenter.heroku.com/articles/pipelines
-
-heroku git:remote -a thawing-inlet-61413
-git remote rename heroku heroku-staging
 
 #### Config
 heroku config
