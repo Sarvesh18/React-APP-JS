@@ -14,7 +14,7 @@ class Home extends Component {
 
         this.state = {
             skip: 0,
-            limit: 10,
+            limit: 100,
             year: null,
             launch: null,
             landing: null

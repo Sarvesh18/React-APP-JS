@@ -4,7 +4,9 @@
     background-color: white;
 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
+    
+    width: 300px;
+    height: 470px;
     float: left;
     margin: 15px 15px;
     /*text-align: center;*/
@@ -55,7 +57,7 @@ div .card__image {
     max-width: 300px;
 }
 
-.price {
+/*.price {
     color: grey;
     font-size: 18px;
-}
+}*/
