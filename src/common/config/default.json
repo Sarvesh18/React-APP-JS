@@ -1,0 +1,8 @@
+{ 
+    "API": [
+        "/launches?limit=100",
+        "/launches?limit=100&launch_success=true",
+        "/launches?limit=100&launch_success=true&land_success=true",
+        "/launches?limit=100&launch_success=true&land_success=true&launch_year=2014"
+    ]   
+}

@@ -1,0 +1,91 @@
+{
+  "name": "react-frontend",
+  "version": "0.0.1",
+  "private": true,
+  "description": "React Frontend",
+  "main": "index.js",
+  "scripts": {
+    "analyze": "source-map-explorer 'dist/static/js/*.js'",
+    "start": "webpack-dev-server --config webpack/webpack.dev.js",
+    "build": "NODE_ENV=production webpack --config webpack/webpack.prod.js",
+    "serve": "serve -s dist -l 5000",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix src/",
+    "format": "prettier --write src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sarvesh18/ReactJS.git"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "Sarvesh18 <sarvesh.singh18@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sarvesh18/ReactJS/issues"
+  },
+  "homepage": "https://github.com/Sarvesh18/ReactJS#readme",
+  "engines": {
+    "npm": "6.x",
+    "node": "10.3.x"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "7.10.4",
+    "@sentry/react": "5.23.0",
+    "axios": "0.20.0",
+    "express": "4.17.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-redux": "7.2.1",
+    "react-router-dom": "5.2.0",
+    "redux": "4.0.5",
+    "redux-logger": "3.0.6",
+    "redux-thunk": "2.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "compression-webpack-plugin": "^5.0.2",
+    "copy-webpack-plugin": "^6.1.0",
+    "css-loader": "^4.3.0",
+    "eslint": "^7.8.1",
+    "file-loader": "^6.1.0",
+    "html-loader": "^1.3.0",
+    "html-webpack-plugin": "^4.4.1",
+    "img-loader": "^3.0.1",
+    "mini-css-extract-plugin": "^0.11.1",
+    "nodemon": "2.0.4",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "postcss-loader": "^4.0.1",
+    "serve": "^11.3.2",
+    "source-map-explorer": "^2.5.0",
+    "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^4.2.0",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-manifest-plugin": "^2.2.0",
+    "webpack-merge": "^5.1.4"
+  }
+}
