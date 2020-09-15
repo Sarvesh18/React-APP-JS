@@ -7,8 +7,8 @@
   "scripts": {
     "analyze": "source-map-explorer 'dist/static/js/*.js'",
     "start": "webpack-dev-server --port $PORT --host 0.0.0.0 --config webpack/webpack.dev.js",
-    "build:prod": "NODE_ENV=production webpack --config webpack/webpack.prod.js",
-    "serve": "serve -s dist -l 5000",
+    "build": "NODE_ENV=production webpack --config webpack/webpack.prod.js",
+    "serve": "serve -s dist -p $PORT",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix src/",
     "format": "prettier --write src/"
