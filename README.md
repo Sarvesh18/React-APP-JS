@@ -20,6 +20,9 @@ MIT License
 #### CD
 * https://devcenter.heroku.com/articles/pipelines
 
+heroku git:remote -a thawing-inlet-61413
+git remote rename heroku heroku-staging
+
 #### Config
 heroku config
 heroku config:get KEY
@@ -31,6 +34,7 @@ heroku ps
 heroku logs
 
 heroku local -e .env -p 5000
+
 
 
 docker build ./
