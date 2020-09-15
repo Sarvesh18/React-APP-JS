@@ -7,7 +7,7 @@
   "scripts": {
     "analyze": "source-map-explorer 'dist/static/js/*.js'",
     "start": "webpack-dev-server --config webpack/webpack.dev.js",
-    "build": "webpack --config webpack/webpack.prod.js && nodemon src/server/index.js",
+    "build": "webpack -w --config webpack/webpack.prod.js & nodemon src/server/index.js",
     "serve": "serve -s dist -p $PORT",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix src/",

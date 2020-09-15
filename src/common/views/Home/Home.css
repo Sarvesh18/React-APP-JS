@@ -1,11 +1,10 @@
 .filter_container {
-    float: left;
-    width: 20%;
+    width: 80%;
 }
 
 .filter {
     margin: 0 auto;
-    width: 15%
+    width: 60%
 }
 
 .filter__heading {
@@ -13,8 +12,26 @@
     text-align: center;
 }
 
-
 .launch_container {
-    float: right;
     width: 80%;
+}
+
+
+@media only screen and (min-width:700px) {
+
+    .filter_container {
+        float: left;
+        width: 20%;
+    }
+
+    .filter {
+        margin: 0 auto;
+        width: 15%
+    }
+
+    .launch_container {
+        float: right;
+        width: 80%;
+    }
+
 }
