@@ -9,8 +9,9 @@ module.exports = merge(common, {
         //compress: true,
         //https: false,
 
-        host: '0.0.0.0',
-        port: process.env.PORT || 8090,
+        //host: '0.0.0.0',
+        //port: process.env.PORT || 8090,
+        
         //open: true,
         hot: true,
         historyApiFallback: true,
