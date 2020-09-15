@@ -1,0 +1,37 @@
+.filter_container {
+    width: 80%;
+}
+
+.filter {
+    margin: 0 auto;
+    width: 60%
+}
+
+.filter__heading {
+    font-weight: bold;
+    text-align: center;
+}
+
+.launch_container {
+    width: 80%;
+}
+
+
+@media only screen and (min-width:700px) {
+
+    .filter_container {
+        float: left;
+        width: 20%;
+    }
+
+    .filter {
+        margin: 0 auto;
+        width: 15%
+    }
+
+    .launch_container {
+        float: right;
+        width: 80%;
+    }
+
+}
