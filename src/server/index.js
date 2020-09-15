@@ -1,17 +1,16 @@
-import path from 'path';
-import express from 'express';
-import React from 'react';
-
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
+const path = require('path');
+const express = require('express');
 
 const app = express();
 
-//const port = 3000;
+app.use(express.static(path.join(__dirname, '..', '..', 'dist')));
 
-//
-app.use('/static', express.static('static'));
+app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
-app.use()
+app.listen(process.env.PORT || 8090);
 
-app.listen(3000);
+//import React from 'react';
+//import { createStore } from 'redux';
+//import { Provider } from 'react-redux';
