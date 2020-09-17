@@ -10,6 +10,7 @@ const preloadedState = {};//window.__PRELOADED_STATE__;
 //delete window.__PRELOADED_STATE__;
 
 //middlewares
+//push
 const store = createStore(reducers, preloadedState, applyMiddleware(thunk, logger));
 
 /**

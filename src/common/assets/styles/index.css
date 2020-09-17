@@ -3,8 +3,7 @@
 }
 
 html, body {
-    /*color: '';*/
-    background-color: #dadde3;/*218, 221, 227*/
+    background-color: #dadde3;
     /*font-family: 'sans-serif';*/
     margin: 0;
     padding: 0;
@@ -19,9 +18,9 @@ html, body {
 }
 
 .container {
-    width: 98%; /*85*/
-    padding: 4px 0;/*15*/
-    margin:0 auto;
+    width: 100%; /*85*/
+    /*padding: 4px 0;/*15*/
+    /*margin:0 auto;*/
 }
 
 /*Mobile View - 1 Column*/

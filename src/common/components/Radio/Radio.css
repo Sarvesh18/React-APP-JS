@@ -3,10 +3,10 @@ label {
     border: 1px solid #D0D0D0;
     background-color: #c2d674;
     
-    float:left;
+    /*float:left;*/
     width: 64px;
-    padding: 2px;
-    margin: 4px 8px 4px 6px;
+    /*padding: 2px;*/
+    margin: 2px 4px;
 }
 
 label:hover {
@@ -15,7 +15,7 @@ label:hover {
 
 label span {
     text-align: center;
-    padding: 3px 0px;
+    padding: 2px 0px;
     display: block;
 }
 

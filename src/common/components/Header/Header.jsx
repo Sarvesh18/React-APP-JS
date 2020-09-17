@@ -5,7 +5,7 @@ import './Header.css';
 
 const Header = (props) => {
 	return (
-        <div className='container header'>
+        <div className='header'>
             {props.children}
             <h2 className='header__title'>SpaceX Launch Programs</h2>
         </div>

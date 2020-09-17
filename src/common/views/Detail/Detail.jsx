@@ -20,10 +20,10 @@ class Detail extends Component {
             const { isSuccess, isFailure, data, error } = this.props.detailApiData;
 
             if(isSuccess) {
-                console.log('data', data);
+                //console.log('data', data);
             }
             else if(isFailure) {
-                console.log('error', error);
+                //console.log('error', error);
             }    
         }
 

@@ -34,10 +34,10 @@ class Home extends Component {
             if(isSuccess) {
                 this.setState({ skip: skip + 1 });
                 
-                console.log('data', data);
+                //console.log('data', data);
             }
             else if(isFailure) {
-                console.log('error', error);
+                //console.log('error', error);
             }    
         }
 
@@ -49,7 +49,10 @@ class Home extends Component {
     }
     
     onSelect(event) {
-        const { name, value } = event.target;
+        const { name, value, checked } = event.target;
+
+        console.log('select===>', name, value, checked);
+
         this.setState({
             skip: 0,
             [name]: value
@@ -76,46 +79,50 @@ class Home extends Component {
         ];
         
         return (
-            <div className='container'>
-                
-                <div className='filter_container filter row'>
 
-                        <div className='filter__heading'>
-                            <p>Launch Year</p>
+            <div className='flex-container'>
+                <div className='side'>
+
+                    <div className='filter'>
+                
+                        <div className='filter-heading'>
+                            <div>Successful Year</div>
                             <hr/>
-                        </div>
-                        <div className='row'>
+                        </div>  
+                        <div className='filter-content'>
                             {
                                 year.map((value, index) => <Radio key={index} value={value} name='year' onClick={(event) => this.onSelect(event)} />)
                             }
                         </div>
 
 
-                        <div className='filter__heading'>
-                            <p>Successful Launch</p>
+                        <div className='filter-heading'>
+                            <div>Successful Launch</div>
                             <hr/>
-                        </div>        
-                        <div className='row'>
+                        </div>  
+                        <div className='filter-content'>
                             {
                                 launch.map((value, index) => <Radio key={index} value={value} name='launch' onClick={(event) => this.onSelect(event)} />)
                             }
                         </div>
 
 
-                        <div className='filter__heading'>
-                            <p>Successful Landing</p>
+                        <div className='filter-heading'>
+                            <div>Successful Landing</div>
                             <hr/>
-                        </div>
-                        <div className='row'>
+                        </div>  
+                        <div className='filter-content'>
                             {
                                 landing.map((value, index) => <Radio key={index} value={value} name='landing' onClick={(event) => this.onSelect(event)} />)
                             }
                         </div>
-                        
+
+                    </div>
+
                 </div>
 
-
-                <div className='launch_container row'>
+                <div className='main'>
+                    <div className='launch'> 
                     {
                         isLoading
                             ? <Spinner /> 
@@ -123,8 +130,10 @@ class Home extends Component {
                                 <Card key={index} launch={launch} history={history} />
                             )
                     }
+                    </div>
                 </div>
-            </div>
+
+            </div>    
         )
     }
 }

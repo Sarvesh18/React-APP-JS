@@ -1,13 +1,11 @@
 .footer {
-    position: absolute;
-    bottom: 0;
-    text-align: center;
 }
 
 .footer__title {
-
+    font-weight: bold;
+    text-align: center;
 }
 
 .footer__content {
-
+    text-align: center;
 }

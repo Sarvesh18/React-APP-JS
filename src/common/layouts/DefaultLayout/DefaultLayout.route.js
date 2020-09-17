@@ -6,13 +6,15 @@ const defaultRoutes = [
         auth: false,
         name: "Home",
         path: HOME_URL,
+        //exact: true,
         component: Home,
     },
     {
         auth: false,
         name: "Detail", 
         path: DETAIL_URL, 
-        component: Detail //Launch
+        component: Detail,
+        //loadData: () => loadData('detail');
     },
     /*{ 
         redirect: true, 

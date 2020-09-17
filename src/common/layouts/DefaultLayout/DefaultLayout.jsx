@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch, Link, NavLink, Redirect } from 'react-router-dom';
 
-import { Redux, Router, ErrorBoundary, LocaleProvider, ThemeProvider } from '@lib';
+import { ErrorBoundary, LocaleProvider, ThemeProvider } from '@lib';
 import { Header, Footer, Error } from '@components';
 
 import '@assets/styles/index.css';
@@ -18,8 +18,6 @@ const DefaultLayout = (props) => {
 
     return (
         <ErrorBoundary>
-        <Redux>
-        <Router>
         {/*<ThemeProvider>
         <LocaleProvider>*/}
             <Header>
@@ -36,11 +34,9 @@ const DefaultLayout = (props) => {
                     <Route exact path='/' render={() => <Redirect to='/home' />} />
                     <Route path='*' render={(props) => <Error code={404} />} />
                 </Switch>
-            {/*<Footer/>*/}
+            <Footer/>
         {/*</ThemeProvider>
         </LocaleProvider>*/}
-        </Router>
-        </Redux>
         </ErrorBoundary>
     );
 }
