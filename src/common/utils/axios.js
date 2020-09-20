@@ -2,8 +2,6 @@
 'use strict';
 const axios = require('axios');
 
-console.log('process.env.BASE_URL', process.env.BASE_URL);
-
 axios.defaults.baseURL = process.env.BASE_URL || 'https://api.spaceXdata.com/v3'; 
 
 //

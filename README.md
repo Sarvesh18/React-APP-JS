@@ -2,6 +2,8 @@
 
 ReactJS is boilerplate to start working in react.
 
+jest --updateSnapshot
+
 ## API Postman Collection
 * https://documenter.getpostman.com/view/2025350/RWaEzAiG
 
@@ -31,7 +33,7 @@ ReactJS is boilerplate to start working in react.
 | Container Component       | Done    |
 | Context                   | Done    |
 | Error Boundary            | Done    |
-| Hooke                     | Done    |
+| Hooks                     | Done    |
 | HOC                       | Done    |
 | Composition               | Done    |
 | RenderProps               | TODO    |

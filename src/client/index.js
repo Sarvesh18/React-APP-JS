@@ -1,3 +1,4 @@
+//import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -6,20 +7,26 @@ import ReactDOM from 'react-dom';
   //dsn: ''
 //})
 
-import { Redux, Router } from '@lib';
+//import App from './App';
+
+import { Router } from '@lib';
 import { DefaultLayout } from '@layouts';
+import Redux from '../common/lib/Redux/Redux';
 
 /**
  * @see https://reactjs.org/docs/react-dom.html#hydrate
  * //ReactDOM.render
  */
+
+console.log('===>', window.__PRELOADED_STATE__);
+
 ReactDOM.hydrate(
   <React.StrictMode>
-    <Redux>
-      <Router>
+    <Router>
+      <Redux>
         <DefaultLayout />
-      </Router>
-    </Redux>
+      </Redux>
+    </Router>
   </React.StrictMode>,
 	document.getElementById('root'),
 );

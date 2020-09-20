@@ -14,7 +14,7 @@ var browserConfig = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'static/js/bundle.js',
-    publicPath: '/'
+    //publicPath: '/'
   }, 
   devServer: {
     host: "localhost",
@@ -90,10 +90,13 @@ var browserConfig = {
       __isBrowser__: JSON.stringify(true)
     }),
 
-    new HtmlWebpackPlugin({
-      filename: "index.html",
+    /*new HtmlWebpackPlugin({
+      //inject: true,
+      //appMountId: 'app',
+      //filename: "index.html",
+      //title: 'Test App',
       template: "./public/index.html"
-    }),
+    }),*/
     new MiniCssExtractPlugin({
       filename: "static/css/style.css",
       chunkFilename: "[id].css"
@@ -111,7 +114,7 @@ var serverConfig = {
   externals: [nodeExternals()],
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: 'server.js',
+    filename: 'server/index.js',
     //publicPath: '/'
   },
   module: {

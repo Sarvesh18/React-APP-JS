@@ -6,7 +6,7 @@ export { default as LocaleProvider } from './LocaleProvider/LocaleProvider';
 
 export { default as ThemeProvider } from './ThemeProvider/ThemeProvider';
 
-export { default as Redux } from './Redux/Redux';
+//export { default as Redux } from './Redux/Redux';
 
 export { default as Router } from './Router/Router';
 

@@ -4,7 +4,7 @@ import './Footer.css';
 
 const Footer = (props) => {
 	return (
-        <div className='container'>
+        <footer className='container'>
             <div className='footer__title'>
                 Developed by:&nbsp; 
             </div>
@@ -12,7 +12,7 @@ const Footer = (props) => {
                 Sarvesh Singh
             </div>
             { props.children }
-        </div>
+        </footer>
     );
 };
 

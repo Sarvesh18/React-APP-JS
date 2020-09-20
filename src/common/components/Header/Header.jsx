@@ -5,10 +5,10 @@ import './Header.css';
 
 const Header = (props) => {
 	return (
-        <div className='header'>
+        <header className='header'>
             {props.children}
             <h2 className='header__title'>SpaceX Launch Programs</h2>
-        </div>
+        </header>
     );
 };
 

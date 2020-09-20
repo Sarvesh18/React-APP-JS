@@ -173,7 +173,7 @@ module.exports = [
                     ] 
                 }, 
                 {
-                    test: /\.(svg|png|jpe?g)/i, //bmp gif
+                    test: /\.(svg|png|jpe?g)/i, //bmp gif//  test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
                     use: [ 
                         {
                             loader: 'url-loader', // convert to base 64 if image less than specified limit
@@ -301,7 +301,7 @@ module.exports = [
         /*module: {
             rules: [
                 {
-                    test: /\.html$/,
+                    test: /\.html$/, //i
                     use: [
                         {
                             loader: 'html-loader',
