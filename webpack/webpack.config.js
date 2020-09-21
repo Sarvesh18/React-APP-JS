@@ -86,7 +86,12 @@ var browserConfig = {
       patterns: [
           { from: path.resolve(__dirname, '../public', 'robots.txt'), to: path.resolve(__dirname, '../dist') },    
           { from: path.resolve(__dirname, '../public', 'favicon.ico'), to: path.resolve(__dirname, '../dist') },
-      ]
+          
+          { from: path.resolve(__dirname, '../public', 'logo192.png'), to: path.resolve(__dirname, '../dist') },
+          { from: path.resolve(__dirname, '../public', 'logo512.png'), to: path.resolve(__dirname, '../dist') },
+          { from: path.resolve(__dirname, '../public', 'manifest.json'), to: path.resolve(__dirname, '../dist') },
+      
+        ]
     }),
 
     new webpack.DefinePlugin({
