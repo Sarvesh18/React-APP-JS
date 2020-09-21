@@ -18,71 +18,97 @@ import { matchPath } from 'react-router';
 import { StaticRouter } from 'react-router';
 
 import rootReducer from '../common/lib/Redux/index';
-import { DefaultLayout } from '../common/layouts';
-//import App from '../client/App';
 
-//import App from '../client/App';
+import defaultRoutes from '../common/layouts/DefaultLayout/DefaultLayout.route';
+import DefaultLayout from '../common/layouts/DefaultLayout/DefaultLayout';
+
 
 export const handleRender = async (req, res) => {
     
-    const store = createStore(rootReducer, applyMiddleware(thunk)); //reducer
+    let status = 200;
 
-    const context = {};
-    const preloadedState = store.getState();
+    const store = createStore(rootReducer, applyMiddleware(thunk));
 
-    //markup
-    const html = 
-    //renderToNodeStream(
-    renderToString(
-        <StaticRouter location={req.url} context={context}>
-            <Provider store={store}>
-                <DefaultLayout />
-            </Provider>
-        </StaticRouter>
-       //<App />
-    );
+    const matches = defaultRoutes.reduce((matches, route) => {
+        const match = matchPath(req.url, {
+            path: route.path
+        });
+        if(match && match.isExact) {
+            matches.push({
+                route,
+                match,
+                promise: route.component.fetchData ? route.component.fetchData({
+                    store,
+                    params: match.params
+                }) : Promise.resolve(null)
+            });
+        }
+        return matches;
+    }, []);
 
-    console.log('Context===>', context, req.url);
-    console.log('===>', matchPath(req.url, {
-        path: '/detail/:id'
-    }));// isExact, params
-
-    if(context.status === 404) {
-        return res.send(404);
+    //404
+    if(matches.length === 0) {
+        status = 404;
     }
 
-    if(context.url) {
-        return res.redirect(301, context.url);
-    }
+    const promises = matches.map((match) => {
+        return match.promise;
+    });
 
-    return res.send(renderFullPage({}, html, preloadedState));
-    /*const indexFile = path.resolve('./dist/index.html');
+    Promise.all(promises).then((...data) => {
 
-    fs.readFile(indexFile, 'utf8', (err, indexData) => {
-        if(err) {
-            return res.status(500).send('Oops, better luck next time!');
-        };
+        const initialState = store.getState();
+        const context = {};
+
+        const html = renderToNodeStream(
+            //renderToString(
+            <StaticRouter location={req.url} context={context}>
+                <Provider store={store}>
+                    <DefaultLayout />
+                </Provider>
+            </StaticRouter>
+        );
+
 
         if(context.status === 404) {
             return res.send(404);
         }
-
+    
         if(context.url) {
             return res.redirect(301, context.url);
         }
+        else {
 
-        return res.send(renderFullPage(indexData, html, preloadedState));
+            //const helmet = Helmet.renderStatic();
+
+            return res.send(renderFullPage({}, html, initialState));
+            //store.dispatch({
+            //    type: 'RESET'
+            //});
+        }
+    }, (error) => {
+        console.log('error', error);
+    });
+
+
+    //const preloadedState = store.getState();
+    /*const indexFile = path.resolve('./dist/index.html');
+    fs.readFile(indexFile, 'utf8', (err, indexData) => {
+        if(err) {
+            return res.status(500).send('Oops, better luck next time!');
+        };
     });*/
 };
 
 const renderFullPage = (indexData, html, preloadedState, routeData = {}) => {
-
-    //<meta name="viewport" content="width=device-width, initial-scale=1" />
     return `
         <!DOCTYPE html>
         <html>
         <head>
-            <meta charset="utf-8">
+            <meta charset="utf-8" />
+            <link rel="icon" href="/favicon.ico" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
             <title>React Universal App</title>
             <link href="/static/css/style.css" rel="stylesheet">
         </head>
@@ -91,13 +117,13 @@ const renderFullPage = (indexData, html, preloadedState, routeData = {}) => {
             <script>
                 window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\x3c')}
             </script>
-            <script src="/static/js/bundle.js"></script>
+            <script src="/static/js/bundle.js?${Math.random()}"></script>
         </body>
         </html>
     `;
 
     /*
-    return indeData.replace('<div id="root"></div>', `<div id="root">${html}</div>`)
+    return indexData.replace('<div id="root"></div>', `<div id="root">${html}</div>`)
         .replace(
             '</body>',
             `
@@ -113,20 +139,3 @@ const renderFullPage = (indexData, html, preloadedState, routeData = {}) => {
             </body>`
         )*/
 };
-
-/*
-@see https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
-  const currentRoute =
-    Routes.find(route => matchPath(req.url, route)) || {};
-  let promise;
-
-  if (currentRoute.loadData) {
-    promise = currentRoute.loadData();
-  } else {
-    promise = Promise.resolve(null);
-  }
-
-  promise.then(data => {
-    // Let's add the data to the context
-    const context = { data };
-*/

@@ -8,7 +8,7 @@ export const getLaunchDetail = (id) => (dispatch, getState) => {
         type: DETAIL_API_LOADING
     });
     
-    getLaunchById(id)
+    return getLaunchById(id)
         .then(data => dispatch({
             type: DETAIL_API_SUCCESS,
             data: data

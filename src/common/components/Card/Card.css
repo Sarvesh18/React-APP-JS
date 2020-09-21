@@ -1,12 +1,9 @@
 .card {
     /*transition: 0.3s;*/
     background-color: white;
-
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    
     width: 300px;/*300*/
     height: 470px;
-    
     margin: 4px auto;
     font-family: arial;
 }

@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { Card, Radio, Spinner } from '@components';
 
 import './Home.css';
+import { YEAR } from './Home.constant';
 import { getLaunchesData } from './Home.action';
 
 class Home extends Component {
@@ -14,13 +15,16 @@ class Home extends Component {
 
         this.state = {
             skip: 0,
-            limit: 100,
+            limit: 5,
             year: null,
             launch: null,
             landing: null
         };
     }
 
+    static fetchData({ store }) {
+        return store.dispatch(getLaunchesData(0, 1, null, null, null));
+    };
 
     componentDidMount() {
         this.getLaunchData();
@@ -33,11 +37,8 @@ class Home extends Component {
 
             if(isSuccess) {
                 this.setState({ skip: skip + 1 });
-                
-                //console.log('data', data);
             }
             else if(isFailure) {
-                //console.log('error', error);
             }    
         }
 
@@ -73,10 +74,6 @@ class Home extends Component {
         const landing = [
             'true', 'false'
         ]
-
-        const year = [
-            2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020
-        ];
         
         return (
 
@@ -84,19 +81,22 @@ class Home extends Component {
                 <div className='side'>
 
                     <div className='filter'>
-                
-                        <div className='filter-heading'>
-                            <div>Successful Year</div>
+                        
+                        <br />
+                        
+                        <div className='filter-heading font-size--large'>
+                            <div>Launch Year</div>
                             <hr/>
                         </div>  
                         <div className='filter-content'>
                             {
-                                year.map((value, index) => <Radio key={index} value={value} name='year' onClick={(event) => this.onSelect(event)} />)
+                                YEAR.map((value, index) => <Radio key={index} value={value} name='year' onClick={(event) => this.onSelect(event)} />)
                             }
                         </div>
+                        
+                        <br />
 
-
-                        <div className='filter-heading'>
+                        <div className='filter-heading font-size--large'>
                             <div>Successful Launch</div>
                             <hr/>
                         </div>  
@@ -106,8 +106,9 @@ class Home extends Component {
                             }
                         </div>
 
+                        <br />
 
-                        <div className='filter-heading'>
+                        <div className='filter-heading font-size--large'>
                             <div>Successful Landing</div>
                             <hr/>
                         </div>  
@@ -116,6 +117,8 @@ class Home extends Component {
                                 landing.map((value, index) => <Radio key={index} value={value} name='landing' onClick={(event) => this.onSelect(event)} />)
                             }
                         </div>
+
+                        <br />
 
                     </div>
 

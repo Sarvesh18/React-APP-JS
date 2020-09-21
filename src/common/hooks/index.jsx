@@ -1,8 +1,10 @@
+// TODO: For detail
+
 import { useState, useEffect } from 'react';
 
-const useFriendStatus = (props) => {
+const useTest = (props) => {
 
-    const [ isOnline, setIsOnline] = useState(null);
+    const [ isTest, setTest] = useState(null);
 
     useEffect(() => {
         //subscribe
@@ -12,7 +14,7 @@ const useFriendStatus = (props) => {
         //}
     })
 
-    return isOnline ? 'Online' :  'Offine';
+    return isTest ? 'Test Available' :  'Test Unavailable';
 
 } 
 

@@ -5,7 +5,7 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
+const CopyPlugin = require('copy-webpack-plugin');
 
 var browserConfig = {
   mode: 'development',
@@ -81,6 +81,13 @@ var browserConfig = {
   plugins: [
 
     //new CleanWebpackPlugin(),
+
+    new CopyPlugin({
+      patterns: [
+          { from: path.resolve(__dirname, '../public', 'robots.txt'), to: path.resolve(__dirname, '../dist') },    
+          { from: path.resolve(__dirname, '../public', 'favicon.ico'), to: path.resolve(__dirname, '../dist') },
+      ]
+    }),
 
     new webpack.DefinePlugin({
       'process.env.BASE_URL': JSON.stringify('https://api.spaceXdata.com/v3'),

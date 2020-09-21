@@ -10,6 +10,10 @@ import { getLaunchDetail } from './Detail.action';
 
 class Detail extends Component {
 
+    static fetchData({ store, params: { id }}) {
+        return store.dispatch(getLaunchDetail(id));
+    };
+
     componentDidMount() {
         this.props.actions.getLaunchDetail(this.props.match.params.id);
     }
@@ -20,10 +24,8 @@ class Detail extends Component {
             const { isSuccess, isFailure, data, error } = this.props.detailApiData;
 
             if(isSuccess) {
-                //console.log('data', data);
             }
             else if(isFailure) {
-                //console.log('error', error);
             }    
         }
 

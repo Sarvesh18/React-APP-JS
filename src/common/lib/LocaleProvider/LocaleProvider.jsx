@@ -1,3 +1,4 @@
+// TODO: Localisation
 import React from 'react';
 
 const LocaleContext = React.createContext('en');

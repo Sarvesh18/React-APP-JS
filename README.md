@@ -2,7 +2,6 @@
 
 ReactJS is boilerplate to start working in react.
 
-jest --updateSnapshot
 
 ## API Postman Collection
 * https://documenter.getpostman.com/view/2025350/RWaEzAiG
@@ -21,9 +20,9 @@ jest --updateSnapshot
 | CD                        | -       |
 | Docker Setup              | Done    |
 | Heroku Deployment         | Done    |
-| RWD                       | InDev   |
-| * SRS                     | InDev   |
-| * TDD                     | InDev   |
+| RWD                       | Done    |
+| SRS                       | Done    |
+| TDD                       | InDev   |
 | Code Splitting            | TODO    |
 
 ## Concept used

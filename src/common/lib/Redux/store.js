@@ -1,3 +1,4 @@
+// TODO: To dynamic inject reducer;
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 
 const staticReducers = {};

@@ -1,3 +1,8 @@
+.font-size--large {
+    font-size: 20px;
+}
+
+/*Mobile View - 1 Column*/
 .flex-container {
     max-width: 1440px;
     margin: 0 auto;
@@ -8,32 +13,36 @@
 }
 
 .side {
-    flex: 100%;
+    width: 100%;
     padding: 20px;
 }
 
 .main {
-    flex: 100%;
-    padding: 20px;
+    width: 80%;
+    margin: 0 auto;
 }
 
+.filter {
+    margin: 8px 25px 8px 25px;
+    border-radius: 8px;
+    background-color: white;
+}
 
 .filter-heading {
-    width: 90%;
+    width: 50%;
     margin: 0 auto;
-    font-weight: bold;
+    
+    padding: 12px 0 8px 0;
     text-align: center;
 }
 
 .filter-content {
+    width: 70%;
+    margin: 0 auto;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-}
-
-.filter {
-    padding: 8px;
-    background-color: white;
 }
 
 .launch {
@@ -45,27 +54,71 @@
 
 /*Tablet View - 2 Column*/
 @media only screen and (min-width:700px) {
+
+    .font-size--large {
+        font-size: 14px;
+    }
+
     .side {
-        flex: 15%;
-        padding: 20px;
+        width: 40%;
+        padding: 12px;
     }
     
     .main {
-        flex: 85%;
-        padding: 20px;
+        width: 60%;
+        padding: 4px;
+    }
+
+    .filter {
+        margin: 0 8px;
+        border-radius: 4px;
+        background-color: white;
     }
 
 }
 
 /*Desktop View - 4 Column*/
 @media only screen and (min-width:1024px) {
+
+    .font-size--large {
+        font-size: 14px;
+    }
+
     .side {
-        flex: 15%;
-        padding: 20px;
+        width: 20%;
+        padding: 8px;
     }
     
     .main {
-        flex: 85%;
-        padding: 20px;
+        width: 80%;
+        padding: 4px;
     }
+
+    .filter-heading {
+        width: 70%;
+        margin: 0 auto;
+        
+        padding: 12px 0 8px 0;
+        text-align: center;
+    }
+    
+    .filter-content {
+        width: 100%;
+        margin: 0 auto;
+    
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .filter {
+        margin: 2px 8px;
+        border-radius: 4px;
+        background-color: white;
+    }
+}
+
+/*Large View - 1440px*/
+@media only screen and (min-width:1440px) {
+
 }

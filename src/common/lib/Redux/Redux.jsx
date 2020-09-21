@@ -6,16 +6,12 @@ import { createStore, applyMiddleware } from 'redux';
 
 import reducers from './index';
 
-const preloadedState = {};//window.__PRELOADED_STATE__;
+const preloadedState = window.__PRELOADED_STATE__;
 
-//ROUTE_DATA
+console.log('window.__PRELOADED_STATE__===>', window.__PRELOADED_STATE__);
 
-console.log('===>', window.__PRELOADED_STATE__);
-
+//TODO: delete
 //delete window.__PRELOADED_STATE__;
-
-//middlewares
-//push
 
 const middlewares = [thunk];
 

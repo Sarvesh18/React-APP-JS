@@ -11,6 +11,7 @@ const initialState = {
 const home = (state = initialState, action) => {
     
     switch(action.type) {
+
         case HOME_API_LOADING: 
             return {
                 ...state,

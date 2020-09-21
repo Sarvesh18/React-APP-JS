@@ -7,7 +7,6 @@ const defaultRoutes = [
         path: HOME_URL,
         //exact: true,
         name: "Home",
-        //exact: true,
         component: Home,
     },
     {

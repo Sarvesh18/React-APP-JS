@@ -133,7 +133,7 @@ const responseHandler = (response) => {
         //setAuthorization(token);
     //}
 
-    console.log('===>response', response);
+    //console.log('===>response', response);
     return response.data;
 }
 
