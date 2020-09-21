@@ -14,7 +14,7 @@ class Home extends Component {
         super(props);
 
         this.state = {
-            skip: 0,
+            skip: 1,
             limit: 100,
             year: null,
             launch: null,
@@ -27,7 +27,8 @@ class Home extends Component {
     };
 
     componentDidMount() {
-        this.getLaunchData();
+        //Server Side Render
+        //this.getLaunchData();
     }
 
     componentDidUpdate(prevProps, prevState) {
