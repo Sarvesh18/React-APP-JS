@@ -1,12 +1,17 @@
+//import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import * as Sentry from '@sentry/react';
-Sentry.init({
-  dsn: 'https://032e921e7eb6426eb599b190884ab558@o447976.ingest.sentry.io/5428609'
-})
+//import * as Sentry from '@sentry/react';
+//Sentry.init({
+  //dsn: ''
+//})
 
+//import App from './App';
+
+import { Router } from '@lib';
 import { DefaultLayout } from '@layouts';
+import Redux from '../common/lib/Redux/Redux';
 
 /**
  * @see https://reactjs.org/docs/react-dom.html#hydrate
@@ -14,7 +19,11 @@ import { DefaultLayout } from '@layouts';
  */
 ReactDOM.hydrate(
   <React.StrictMode>
-    <DefaultLayout />
+    <Router>
+      <Redux>
+        <DefaultLayout />
+      </Redux>
+    </Router>
   </React.StrictMode>,
 	document.getElementById('root'),
 );

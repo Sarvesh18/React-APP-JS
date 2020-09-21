@@ -8,7 +8,7 @@ const Radio = (props) => {
 
     return (
         <>
-            <label>
+            <label className='font-size--large'>
                 <input type='radio' name={name} value={value} onClick={onClick} /><span>{value}</span>
             </label>
         </>

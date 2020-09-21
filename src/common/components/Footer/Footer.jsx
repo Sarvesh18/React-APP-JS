@@ -4,13 +4,10 @@ import './Footer.css';
 
 const Footer = (props) => {
 	return (
-        <div className='footer'>
-            <span className='footer__title'>
-                Developed by:&nbsp; 
-            </span>
-            <span className='footer__content'>
-                Sarvesh Singh
-            </span>
+        <div className='container'>
+            <h3 className='footer__title'>
+                Developed by:&nbsp;Sarvesh Singh 
+            </h3>
             { props.children }
         </div>
     );

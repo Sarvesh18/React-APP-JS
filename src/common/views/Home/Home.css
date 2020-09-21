@@ -1,37 +1,124 @@
-.filter_container {
+.font-size--large {
+    font-size: 20px;
+}
+
+/*Mobile View - 1 Column*/
+.flex-container {
+    max-width: 1440px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.side {
+    width: 100%;
+    padding: 20px;
+}
+
+.main {
     width: 80%;
+    margin: 0 auto;
 }
 
 .filter {
-    margin: 0 auto;
-    width: 60%
+    margin: 8px 25px 8px 25px;
+    border-radius: 8px;
+    background-color: white;
 }
 
-.filter__heading {
-    font-weight: bold;
+.filter-heading {
+    width: 50%;
+    margin: 0 auto;
+    
+    padding: 12px 0 8px 0;
     text-align: center;
 }
 
-.launch_container {
-    width: 80%;
+.filter-content {
+    width: 70%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.launch {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 
+/*Tablet View - 2 Column*/
 @media only screen and (min-width:700px) {
 
-    .filter_container {
-        float: left;
-        width: 20%;
+    .font-size--large {
+        font-size: 14px;
+    }
+
+    .side {
+        width: 40%;
+        padding: 12px;
+    }
+    
+    .main {
+        width: 60%;
+        padding: 4px;
     }
 
     .filter {
-        margin: 0 auto;
-        width: 15%
+        margin: 0 8px;
+        border-radius: 4px;
+        background-color: white;
     }
 
-    .launch_container {
-        float: right;
-        width: 80%;
+}
+
+/*Desktop View - 4 Column*/
+@media only screen and (min-width:1024px) {
+
+    .font-size--large {
+        font-size: 14px;
     }
+
+    .side {
+        width: 20%;
+        padding: 8px;
+    }
+    
+    .main {
+        width: 80%;
+        padding: 4px;
+    }
+
+    .filter-heading {
+        width: 70%;
+        margin: 0 auto;
+        
+        padding: 12px 0 8px 0;
+        text-align: center;
+    }
+    
+    .filter-content {
+        width: 100%;
+        margin: 0 auto;
+    
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .filter {
+        margin: 2px 8px;
+        border-radius: 4px;
+        background-color: white;
+    }
+}
+
+/*Large View - 1440px*/
+@media only screen and (min-width:1440px) {
 
 }

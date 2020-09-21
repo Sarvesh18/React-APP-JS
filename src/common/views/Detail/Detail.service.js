@@ -4,7 +4,5 @@ import { api } from '@utils';
 export const getLaunchById = (id, data = {}) => {
     const path = `/launches/${id}`;
 
-    console.log('path===>', path);
-
     return api('GET', path, data);
 } 

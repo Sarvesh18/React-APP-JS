@@ -2,8 +2,17 @@
 
 ReactJS is boilerplate to start working in react.
 
+
 ## API Postman Collection
 * https://documenter.getpostman.com/view/2025350/RWaEzAiG
+
+## How to use
+To install dependencies
+* npm i 
+To transpile to es5
+* npm run build
+To start node server
+* npm run start
 
 
 ## Library used
@@ -19,9 +28,9 @@ ReactJS is boilerplate to start working in react.
 | CD                        | -       |
 | Docker Setup              | Done    |
 | Heroku Deployment         | Done    |
-| RWD                       | InDev   |
-| * SRS                     | InDev   |
-| * TDD                     | InDev   |
+| RWD                       | Done    |
+| SRS                       | Done    |
+| TDD                       | InDev   |
 | Code Splitting            | TODO    |
 
 ## Concept used
@@ -31,7 +40,7 @@ ReactJS is boilerplate to start working in react.
 | Container Component       | Done    |
 | Context                   | Done    |
 | Error Boundary            | Done    |
-| Hooke                     | Done    |
+| Hooks                     | Done    |
 | HOC                       | Done    |
 | Composition               | Done    |
 | RenderProps               | TODO    |

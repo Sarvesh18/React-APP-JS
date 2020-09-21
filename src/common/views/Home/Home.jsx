@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { Card, Radio, Spinner } from '@components';
 
 import './Home.css';
+import { YEAR } from './Home.constant';
 import { getLaunchesData } from './Home.action';
 
 class Home extends Component {
@@ -21,6 +22,9 @@ class Home extends Component {
         };
     }
 
+    static fetchData({ store }) {
+        return store.dispatch(getLaunchesData(0, 100, null, null, null));
+    };
 
     componentDidMount() {
         this.getLaunchData();
@@ -33,11 +37,8 @@ class Home extends Component {
 
             if(isSuccess) {
                 this.setState({ skip: skip + 1 });
-                
-                console.log('data', data);
             }
             else if(isFailure) {
-                console.log('error', error);
             }    
         }
 
@@ -49,7 +50,10 @@ class Home extends Component {
     }
     
     onSelect(event) {
-        const { name, value } = event.target;
+        const { name, value, checked } = event.target;
+
+        //console.log('select===>', name, value, checked);
+
         this.setState({
             skip: 0,
             [name]: value
@@ -70,52 +74,58 @@ class Home extends Component {
         const landing = [
             'true', 'false'
         ]
-
-        const year = [
-            2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020
-        ];
         
         return (
-            <div className='container'>
-                
-                <div className='filter_container filter row'>
 
-                        <div className='filter__heading'>
-                            <p>Launch Year</p>
+            <div className='flex-container'>
+                <div className='side'>
+
+                    <div className='filter'>
+                        
+                        <br />
+                        
+                        <div className='filter-heading font-size--large'>
+                            <div>Launch Year</div>
                             <hr/>
-                        </div>
-                        <div className='row'>
+                        </div>  
+                        <div className='filter-content'>
                             {
-                                year.map((value, index) => <Radio key={index} value={value} name='year' onClick={(event) => this.onSelect(event)} />)
+                                YEAR.map((value, index) => <Radio key={index} value={value} name='year' onClick={(event) => this.onSelect(event)} />)
                             }
                         </div>
+                        
+                        <br />
 
-
-                        <div className='filter__heading'>
-                            <p>Successful Launch</p>
+                        <div className='filter-heading font-size--large'>
+                            <div>Successful Launch</div>
                             <hr/>
-                        </div>        
-                        <div className='row'>
+                        </div>  
+                        <div className='filter-content'>
                             {
                                 launch.map((value, index) => <Radio key={index} value={value} name='launch' onClick={(event) => this.onSelect(event)} />)
                             }
                         </div>
 
+                        <br />
 
-                        <div className='filter__heading'>
-                            <p>Successful Landing</p>
+                        <div className='filter-heading font-size--large'>
+                            <div>Successful Landing</div>
                             <hr/>
-                        </div>
-                        <div className='row'>
+                        </div>  
+                        <div className='filter-content'>
                             {
                                 landing.map((value, index) => <Radio key={index} value={value} name='landing' onClick={(event) => this.onSelect(event)} />)
                             }
                         </div>
-                        
+
+                        <br />
+
+                    </div>
+
                 </div>
 
-
-                <div className='launch_container row'>
+                <div className='main'>
+                    <div className='launch'> 
                     {
                         isLoading
                             ? <Spinner /> 
@@ -123,8 +133,10 @@ class Home extends Component {
                                 <Card key={index} launch={launch} history={history} />
                             )
                     }
+                    </div>
                 </div>
-            </div>
+
+            </div>    
         )
     }
 }

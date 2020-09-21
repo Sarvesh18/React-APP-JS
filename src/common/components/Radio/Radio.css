@@ -3,25 +3,26 @@ label {
     border: 1px solid #D0D0D0;
     background-color: #c2d674;
     
-    float:left;
-    width: 64px;
-    padding: 2px;
-    margin: 4px 8px 4px 6px;
-}
-
-label:hover {
-    background: #89a80c;
+    width: 40%;
+    padding: 4px 8px 4px 8px;
+    
+    margin: 8px 8px 8px 8px;
+    /*font-size: 48px;*/
 }
 
 label span {
-    text-align: center;
-    padding: 3px 0px;
     display: block;
+    padding: 4px 0px;
+    text-align: center;
 }
 
 label input {
     position: absolute;
     top: -20px;
+}
+
+label:hover {
+    background: #89a80c;
 }
 
 input[type='radio']:checked + span {

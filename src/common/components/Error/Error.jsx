@@ -4,6 +4,8 @@ const Error = (props) => {
     
     switch(props.code) {
         case 404:
+            console.log('404===>', props);
+            //props.staticContext.status = 404;
             return (
                 <h1>
                     404 Not Found.

@@ -4,15 +4,18 @@ import { HOME_URL, DETAIL_URL, DEFAULT_URL} from './DefaultLayout.constant';
 const defaultRoutes = [
     {
         auth: false,
-        name: "Home",
         path: HOME_URL,
+        //exact: true,
+        name: "Home",
         component: Home,
     },
     {
         auth: false,
         name: "Detail", 
         path: DETAIL_URL, 
-        component: Detail //Launch
+        component: Detail,
+        //loadData: () => loadData('detail');
+        //routes: []
     },
     /*{ 
         redirect: true, 
