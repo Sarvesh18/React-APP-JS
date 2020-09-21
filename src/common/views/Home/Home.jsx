@@ -15,7 +15,7 @@ class Home extends Component {
 
         this.state = {
             skip: 0,
-            limit: 5,
+            limit: 100,
             year: null,
             launch: null,
             landing: null
@@ -23,7 +23,7 @@ class Home extends Component {
     }
 
     static fetchData({ store }) {
-        return store.dispatch(getLaunchesData(0, 1, null, null, null));
+        return store.dispatch(getLaunchesData(0, 100, null, null, null));
     };
 
     componentDidMount() {
@@ -52,7 +52,7 @@ class Home extends Component {
     onSelect(event) {
         const { name, value, checked } = event.target;
 
-        console.log('select===>', name, value, checked);
+        //console.log('select===>', name, value, checked);
 
         this.setState({
             skip: 0,

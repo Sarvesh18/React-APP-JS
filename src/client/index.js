@@ -17,9 +17,6 @@ import Redux from '../common/lib/Redux/Redux';
  * @see https://reactjs.org/docs/react-dom.html#hydrate
  * //ReactDOM.render
  */
-
-console.log('===>', window.__PRELOADED_STATE__);
-
 ReactDOM.hydrate(
   <React.StrictMode>
     <Router>

@@ -6,6 +6,14 @@ ReactJS is boilerplate to start working in react.
 ## API Postman Collection
 * https://documenter.getpostman.com/view/2025350/RWaEzAiG
 
+## How to use
+To install dependencies
+* npm i 
+To transpile to es5
+* npm run build
+To start node server
+* npm run start
+
 
 ## Library used
 

@@ -150,24 +150,24 @@ const errorHandler = (error) => {
     //         stack: ''
     //     }
 
-    console.log('error.config', error.config);
+    //console.log('error.config', error.config);
 
     if(error.response) {
         //error.response.status === 401
         //dispatch() - logout
         //setAAuth(null);
 
-        console.log('error.response', error.response);
+        //console.log('error.response', error.response);
         throw new Error(error.response.data ? error.response.data : '');
     }    
     else if(error.request) {
         //TODO:
-        console.log('error.request', error.request);
+        //console.log('error.request', error.request);
         throw new Error(JSON.stringify(error.request));
     }
     else {
 
-        console.log('error.message', error.message); 
+        //console.log('error.message', error.message); 
         throw new Error(error.message);
     }
 }

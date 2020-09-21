@@ -16,15 +16,12 @@ export const getLaunchesData = (skip, limit, year, launch, landing) => (dispatch
         query +=`&land_success=${landing}`;        
     }
 
-    console.log(query);
-
     dispatch({
         type: HOME_API_LOADING
     });
     
     return getAllLaunches(query)
         .then(data => {
-            console.log('ds');
             dispatch({
                 type: HOME_API_SUCCESS,
                 skip,
@@ -32,7 +29,6 @@ export const getLaunchesData = (skip, limit, year, launch, landing) => (dispatch
             })
         })
         .catch(error => {
-            console.log('ef');
             dispatch({
                 type: HOME_API_FAILURE,
                 error: error.message
