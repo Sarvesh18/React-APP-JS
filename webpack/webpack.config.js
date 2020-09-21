@@ -8,7 +8,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 var browserConfig = {
-  mode: 'development',
+  mode: 'production',
   entry: path.resolve(__dirname, '../src/client/index.js'),
   //externals: [nodeExternals()],
   output: {
@@ -96,7 +96,7 @@ var browserConfig = {
 
     new webpack.DefinePlugin({
       'process.env.BASE_URL': JSON.stringify('https://api.spaceXdata.com/v3'),
-      'process.env.NODE_ENV': JSON.stringify('development'),
+      'process.env.NODE_ENV': JSON.stringify('production'),
       'process.env.DEBUG': JSON.stringify(false),
       //'PUBLIC_URL': JSON.stringify('localhost:800'),
       __isBrowser__: JSON.stringify(true)
