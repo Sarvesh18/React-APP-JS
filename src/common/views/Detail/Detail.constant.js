@@ -1,0 +1,8 @@
+//Types
+export const DETAIL_API_LOADING = 'DETAIL_API_LOADING';
+export const DETAIL_API_SUCCESS = 'DETAIL_API_SUCCESS';
+export const DETAIL_API_FAILURE = 'DETAIL_API_FAILURE';
+
+export const DETAIL_API_RESET = 'DETAIL_API_RESET';
+
+//Endpoints

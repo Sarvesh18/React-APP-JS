@@ -1,0 +1,30 @@
+label {
+    border-radius: 4px;
+    border: 1px solid #D0D0D0;
+    background-color: #c2d674;
+    
+    width: 40%;
+    padding: 4px 8px 4px 8px;
+    
+    margin: 8px 8px 8px 8px;
+    /*font-size: 48px;*/
+}
+
+label span {
+    display: block;
+    padding: 4px 0px;
+    text-align: center;
+}
+
+label input {
+    position: absolute;
+    top: -20px;
+}
+
+label:hover {
+    background: #89a80c;
+}
+
+input[type='radio']:checked + span {
+    background-color: #89a80c;
+}

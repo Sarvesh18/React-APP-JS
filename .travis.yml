@@ -1,0 +1,12 @@
+language: node_js
+
+#services: 
+#jobs:
+#before_install:
+#before_script:
+
+env:
+  - NODE_ENV=test
+
+script:
+  - npm run test

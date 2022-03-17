@@ -1,0 +1,11 @@
+.header {
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-left: 15px;
+}
+
+.header__title {
+
+}
+
